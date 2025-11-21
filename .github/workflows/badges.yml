@@ -61,9 +61,9 @@ jobs:
             cp .badge-tools/assets/logo/logo.png assets/logo/
             echo "✓ Logo copied"
           fi
-          if [ -f .badge-tools/assets/logo/logo.svg ]; then
-            cp .badge-tools/assets/logo/logo.svg assets/logo/
-            echo "✓ Logo SVG copied"
+          if [ -f .badge-tools/assets/logo/profile.svg ]; then
+            cp .badge-tools/assets/logo/profile.svg assets/logo/
+            echo "✓ Profile SVG copied"
           fi
 
       - name: Run badge generator
