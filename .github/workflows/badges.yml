@@ -62,7 +62,13 @@ jobs:
             echo "✓ Logo copied"
           fi
           if [ -f .badge-tools/assets/logo/profile.svg ]; then
-            cp .badge-tools/assets/logo/profile.svg assets/logo/
+            if head -n1 .badge-tools/assets/logo/profile.svg | grep -q "git-lfs"; then
+              echo "Profile SVG is in LFS, downloading actual file..."
+              cd .badge-tools
+              git lfs pull --include="assets/logo/profile.svg"
+              cd ..
+            fi
+            cp .badge-tools/assets/logo/logo.svg assets/logo/
             echo "✓ Profile SVG copied"
           fi
 
